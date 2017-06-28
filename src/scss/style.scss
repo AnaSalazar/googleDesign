@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.row {
+  &:before{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    @extend .row:before;
+    clear: both;
+  }
+}
+
+[class*="col-"]{
+  min-height: 7px;
+  padding: 12px;
+  float: left;
+}
+
+@function anchoColumnas($columns) {
+  @return percentage(($columns/12));
+}
+
+@for $numColumna from 1 through 12 {
+  .col-#{$numColumna}{
+    width: anchoColumnas($numColumna);
+  }
+}
+
+$dark-gray: #424242;
+$ligth-gray: #5f6368;
+$text-gray: #414549;
+$color-blue: #4285f4;
+
+.center {
+  text-align: center;
+  background-color: red;
+}
+
+.division {
+  border-top: 3px solid $color-blue;
+}
+
+img{
+  @extend .col-12;
+}
+
+.boton-redondo {
+  border-radius: 100%;
+  background-color: purple;
+}
