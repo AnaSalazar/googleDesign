@@ -1,31 +1,10 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0px auto; }
-
-.row:before, .row:after {
-  content: " ";
-  display: table; }
-.row:after {
-  clear: both; }
-
-[class*="col-"] {
-  min-height: 7px;
-  padding: 12px;
-  float: left; }
-
-.col-1 {
+.col-1, .items {
   width: 8.33333%; }
 
 .col-2 {
   width: 16.66667%; }
 
-.col-3 {
+.col-3, .nav-footer img {
   width: 25%; }
 
 .col-4 {
@@ -55,9 +34,46 @@
 .col-12, img {
   width: 100%; }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0px auto; }
+
+.row:before, .row:after {
+  content: " ";
+  display: table; }
+.row:after {
+  clear: both; }
+
+[class*="col-"] {
+  min-height: 7px;
+  padding: 12px;
+  float: left; }
+
+.titles {
+  font-size: 30px;
+  font-weight: bold; }
+
+.subtitles {
+  color: #414549;
+  font-size: 12px;
+  padding: 2%; }
+
+.date {
+  font-size: 20px;
+  color: #414549; }
+
+.text-gray {
+  color: #414549;
+  padding-bottom: 3%; }
+
 .center {
-  text-align: center;
-  background-color: red; }
+  text-align: center; }
 
 .division {
   border-top: 3px solid #4285f4; }
@@ -65,5 +81,18 @@
 .boton-redondo {
   border-radius: 100%;
   background-color: purple; }
+
+.nav-footer {
+  text-align: center;
+  border-top: 1px solid #5f6368;
+  border-bottom: 1px solid #5f6368;
+  padding-top: 1%; }
+
+.items {
+  display: inline-block; }
+
+#blue-light {
+  background-color: #d3e2fc;
+  margin-bottom: 2%; }
 
 /*# sourceMappingURL=style.css.map */
