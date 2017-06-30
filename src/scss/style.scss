@@ -1,11 +1,23 @@
+@import "variables";
+@function anchoColumnas($columns) {
+  @return percentage(($columns/12));
+}
+
+@for $numColumna from 1 through 12 {
+  .col-#{$numColumna}{
+    width: anchoColumnas($numColumna);
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 .container {
-  width: 100%;
   max-width: 1200px;
+  width: 100%;
   margin: 0px auto;
 }
 
@@ -26,24 +38,29 @@
   float: left;
 }
 
-@function anchoColumnas($columns) {
-  @return percentage(($columns/12));
+.titles {
+  font-size: $font-size-titles;
+  font-weight: bold;
 }
 
-@for $numColumna from 1 through 12 {
-  .col-#{$numColumna}{
-    width: anchoColumnas($numColumna);
-  }
+.subtitles {
+  color: $text-gray;
+  font-size: $font-size-subtitles;
+  padding:2%;
 }
 
-$dark-gray: #424242;
-$ligth-gray: #5f6368;
-$text-gray: #414549;
-$color-blue: #4285f4;
+.date {
+  font-size: $date;
+  color: $text-gray;
+}
+
+.text-gray {
+  color: $text-gray;
+  padding-bottom: 3%;
+}
 
 .center {
   text-align: center;
-  background-color: red;
 }
 
 .division {
@@ -57,4 +74,24 @@ img{
 .boton-redondo {
   border-radius: 100%;
   background-color: purple;
+}
+
+.nav-footer {
+  text-align: center;
+  border-top: 1px solid $ligth-gray;
+  border-bottom: 1px solid $ligth-gray;
+  padding-top: 1%;
+  & img {
+    @extend .col-3;
+  }
+}
+
+.items {
+  display: inline-block;
+  @extend .col-1;
+}
+
+#blue-light {
+  background-color: lighten($color-blue, 30%);
+  margin-bottom: 2%;
 }
